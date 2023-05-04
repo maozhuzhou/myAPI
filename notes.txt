@@ -1,0 +1,38 @@
+> mkdir myAPI
+> cd myAPI
+> code .
+
+->VSCode -> Terminal -> new terminal:
+
+python -m venv djangoenv
+djangoenv/Scripts/activate
+
+pip install pipenv
+pipenv install django
+pipenv install djangorestframework
+pip install django-filter
+
+pipenv shell
+
+django-admin startproject myServer
+
+cd myServer
+python manage.py startapp myAPI
+
+python manage.py runserver
+
+->register 'rest_framework', ‘myAPI’,'django_filters', to INSTALLED_APPS inside “settings.py”
+->register REST_FRAMWORK’s settings to “settings.py”
+->add models to “models.py”
+python manage.py makemigrations
+python manage.py migrate
+
+->register models in “admin.py”
+->add “serializers.py” inside myAPI folder
+->add views inside “views.py”
+->add “urls.py” inside myAPI folder
+->register myAPI.urls to “myServer/urls.py”
+
+-> test:  http://127.0.0.1:8000/api/menu-items/
+http://127.0.0.1:8000/api/menu-items/1
+
