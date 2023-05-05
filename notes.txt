@@ -3,7 +3,7 @@
 > code .
 
 ->VSCode -> Terminal -> new terminal:
-
+ 
 python -m venv djangoenv
 djangoenv/Scripts/activate
 
@@ -33,6 +33,9 @@ python manage.py migrate
 ->add “urls.py” inside myAPI folder
 ->register myAPI.urls to “myServer/urls.py”
 
--> test:  http://127.0.0.1:8000/api/menu-items/
+-> test:  
+http://127.0.0.1:8000/api/categories/
+http://127.0.0.1:8000/api/categories/1
+http://127.0.0.1:8000/api/menu-items/
 http://127.0.0.1:8000/api/menu-items/1
-
+-> test using 3rd party tester like Talend API Tester(chrome extension) 

@@ -7,6 +7,12 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
+    
+    def update(self, instance, validated_data):
+        print('*****override default update behavior here*****')        
+        Category.objects.filter(pk=instance.id).update(**validated_data)
+        category = Category.objects.get(pk=instance.id)
+        return category
         
 class MenuItemSerializer(serializers.ModelSerializer):
     stock = serializers.IntegerField(source='inventory')
